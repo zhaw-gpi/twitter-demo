@@ -1,0 +1,21 @@
+<!--
+Formular für Mitarbeiter, um seine E-Mail-Adresse und den gewünschten Tweet-
+Content anzugeben
+-->
+<h1>Tweet einreichen</h1>
+
+<form role="form" class="form-horizontal">
+    <div class="control-group">
+        <label class="control-label">E-Mail-Adresse</label>
+        <div class="controls">
+            <input type="text" class="form-control" cam-variable-name="email" cam-variable-type="String" required />
+        </div>
+    </div>    
+
+    <div class="control-group">
+        <label class="control-label">Gewünschter Tweet-Text</label>
+        <div class="controls">
+            <textarea rows="4" class="form-control" cam-variable-name="tweetContent" cam-variable-type="String" required></textarea>
+        </div>
+    </div>
+</form>
