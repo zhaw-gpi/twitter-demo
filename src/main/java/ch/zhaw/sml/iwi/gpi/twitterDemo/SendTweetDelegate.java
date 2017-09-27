@@ -17,7 +17,7 @@ import twitter4j.auth.AccessToken;
 public class SendTweetDelegate implements JavaDelegate {
 
     /**
-     * Wird aufgerufen bei Aufgabe 'Tweet senden'. Nutzt die Twitter API, um 
+     * Wird aufgerufen bei Aufgabe 'Tweet senden'. Nutzt die Twitter API, um
      * einen neuen Tweet zu veröffentlichen
      *
      * @param execution Zugriff auf das DelegateExecution-Objekt mit z.B. dem
@@ -26,23 +26,23 @@ public class SendTweetDelegate implements JavaDelegate {
      */
     @Override
     public void execute(DelegateExecution execution) throws Exception {
-        // Zu sendenden Inhalt festlegen
-        String content = "Grüsse von der ZHAW: scep";
-        
+        // Tweet-Content auslesen
+        String content = (String) execution.getVariable("tweetContent");
+
         // Twitter-Library instanzieren
         Twitter twitter = new TwitterFactory().getInstance();
-        
+
         // Bei Twitter AUTHENTIFIZIEREN mit Consumer Key und Consumer Secret
         twitter.setOAuthConsumer("lRhS80iIXXQtm6LM03awjvrvk", "gabtxwW8lnSL9yQUNdzAfgBOgIMSRqh7MegQs79GlKVWF36qLS");
-        
+
         // Bei Twitter für das Senden von Tweets AUTHORISIEREN mit entsprechendem Access Token
         AccessToken accessToken = new AccessToken("220324559-jet1dkzhSOeDWdaclI48z5txJRFLCnLOK45qStvo", "B28Ze8VDucBdiE38aVQqTxOyPc7eHunxBVv7XgGim4say");
         twitter.setOAuthAccessToken(accessToken);
-        
+
         // Sendet den Content an Twitter (bei Twitter heisst dies, dass der
         // Status aktualisiert wird, ausser wenn er bereits gleich ist)
         twitter.updateStatus(content);
-        
+
     }
 
 }
