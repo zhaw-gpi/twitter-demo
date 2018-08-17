@@ -1,6 +1,6 @@
 Björn Scheppler, 27.9.2017
 
-# Read Me twitter-demo
+# Read Me twitter-demo (Archiviert, da nun umfassender gelöst in https://github.com/zhaw-gpi/project-template)
 Dieses Projekt enthält den Twitter-Demo-Prozess von Camunda, jedoch als Spring Boot-Version und auf die ZHAW angepasst (Email-Server)
 
 # Verwendete Quellen
